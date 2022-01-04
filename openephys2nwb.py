@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 from OpenEphys import load
 import re
+import os
 from dateutil import parser
 from defaults import default_metadata
 
