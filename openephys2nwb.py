@@ -76,7 +76,7 @@ def convertOpenEphystoNWB(ephys_filePath, save_path):
 
             r = load(os.path.join(filePath, files))
 
-            dat = TimeSeries(name = "continuous_"+r['header']['channel'],  data = r['data'],   unit = 'V',
+            dat = TimeSeries(name = files.split('.')[0],  data = r['data'],   unit = 'V',
                       starting_time=0.0, rate=float(r['header']['sampleRate']),
                       conversion=r['header']['bitVolts'])
             
