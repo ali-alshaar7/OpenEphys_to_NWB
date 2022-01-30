@@ -8,7 +8,7 @@ import os
 from dateutil import parser
 from defaults import default_metadata
 
-def convertOpenEphystoNWB(ephys_filePath, save_path):
+def convertOpenEphystoNWB(ephys_filePath):
     
     """
     main converter: receives opene ephys directory and saves nwb file to specified directory
@@ -106,10 +106,13 @@ def convertOpenEphystoNWB(ephys_filePath, save_path):
             
             nwbfile.add_acquisition( spike_dat )
 
-    io = NWBHDF5IO( save_path, mode='w')
-    io.write(nwbfile)
-    io.close()
+    return nwbfile
+
+def save_nwb( src, save_path):
     
+    io = NWBHDF5IO( save_path, mode='w')
+    io.write(convertOpenEphystoNWB(src))
+    io.close()
     
 def readMetaData(filepath):
 

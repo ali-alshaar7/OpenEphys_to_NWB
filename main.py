@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     args = p.parse_args(); src = str(args.source_dir); dst = str(args.dest_dir)
 
-    convertOpenEphystoNWB(src, dst)
+    save_nwb(src, dst)
 
 
 
