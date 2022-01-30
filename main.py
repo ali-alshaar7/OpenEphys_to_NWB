@@ -1,7 +1,7 @@
 
 import gc, os, sys, glob, argparse, utils
 import subprocess
-from openephys2nwb import convertOpenEphystoNWB
+from openephys2nwb import save_nwb
 import shutil
 
 
