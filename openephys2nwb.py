@@ -79,7 +79,7 @@ def convertOpenEphystoNWB(ephys_filePath):
             dat = TimeSeries(name = files.split('.')[0],  data = r['data'],   unit = 'V',
                       starting_time=0.0, rate=float(r['header']['sampleRate']),
                       conversion=r['header']['bitVolts'])
-            
+
             cont_dat = ecephys.ElectricalSeries(name = "continuous_"+r['header']['channel'],
                                                 data = dat,
                                                 electrodes = electrode_table_region,
@@ -98,7 +98,7 @@ def convertOpenEphystoNWB(ephys_filePath):
             dat = TimeSeries(name = r['header']['electrode'], data = r['spikes'], unit = 'V',
                                     starting_time=0.0, rate=float(r['header']['sampleRate']),
                                     ) 
-            
+
             spike_dat = ecephys.SpikeEventSeries(name = r['header']['electrode'],
                                                 data = dat,
                                                 timestamps = r['timestamps'],

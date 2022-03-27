@@ -1,4 +1,5 @@
-numpy >= 1.19.0
-scipy >= 1.7.0
-pynwb >= 2.0.0
-utils >= 1.0.0
+numpy==1.19.5
+pynwb==2.0.0
+python_dateutil==2.8.2
+scipy==1.7.1
+utils==1.0.1
